@@ -2,13 +2,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 
-const WA_NUMBER = '525500000000';
-const WA_MESSAGE = 'Hola, me gustaría agendar una cita con un especialista ortopédico.';
+const WA_NUMBER = '+5213340974859';
 
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(false);
+  const [wamessage, setWamessage] = useState('Hola, me gustaría agendar una cita con un especialista ortopédico.');
 
-  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(wamessage)}`;
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setWamessage(e.target.value);
+  }
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
@@ -18,7 +22,7 @@ export default function WhatsAppButton() {
             initial={{ opacity: 0, scale: 0.9, y: 8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 8 }}
-            className="relative bg-white rounded-2xl shadow-2xl p-4 w-64 border border-gray-100"
+            className="relative bg-white rounded-2xl shadow-2xl p-4 w-128 border border-gray-100"
           >
             <button
               onClick={() => setShowTooltip(false)}
@@ -32,9 +36,11 @@ export default function WhatsAppButton() {
               </div>
               <div>
                 <p className="text-gray-900 font-semibold text-sm">Ortopedia Justo Sierra</p>
-                <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">
-                  ¡Hola! ¿Cómo podemos ayudarte hoy? Agenda tu cita.
-                </p>
+                <textarea
+                  value={wamessage}
+                  onChange={handleChange}
+                  className="border border-gray-300 w-full h-24 rounded-md mt-5 mb-5 py-6 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
                 <a
                   href={url}
                   target="_blank"

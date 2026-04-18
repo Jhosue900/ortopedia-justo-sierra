@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Stethoscope } from 'lucide-react';
+import LOGO  from '../images/LOGO.png'
 
 const navLinks = [
   { label: 'Especialidades', href: '#especialidades' },
@@ -28,16 +29,10 @@ export default function Navbar() {
         scrolled ? 'bg-[#002855]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <Stethoscope className="w-5 h-5 text-[#003366]" />
-            </div>
-            <div className="hidden sm:block">
-              <p className="text-white font-bold text-sm leading-tight">ORTOPEDIA</p>
-              <p className="text-blue-300 text-xs leading-tight font-medium tracking-widest">JUSTO SIERRA</p>
-            </div>
+            <img src={LOGO} alt="Ortopedia Justo Sierra" className="w-32 h-8 sm:w-50 sm:h-10" />
           </a>
 
           <ul className="hidden lg:flex items-center gap-8">
@@ -58,7 +53,7 @@ export default function Navbar() {
               href="#contacto"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[#003366] text-sm font-semibold rounded-full hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
-              Agenda Ahora
+              Agenda Ahora  →
             </a>
           </div>
 

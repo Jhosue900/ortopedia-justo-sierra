@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, ChevronRight, Award, Shield, Clock } from 'lucide-react';
+import HeroBG from '../images/HeroBG.jpeg';
 
 const surgeonImages = [
   'https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -35,11 +36,11 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen rounded-3xl m-2 flex flex-col justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
+          backgroundImage: `url(${HeroBG})`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#001a3d]/95 via-[#002855]/88 to-[#003d80]/80" />
@@ -54,8 +55,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/20 border border-blue-400/30 rounded-full mb-6"
             >
-              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" /> 
               <span className="text-blue-300 text-sm font-medium tracking-wide">Expertos Subespecialistas</span>
+              
             </motion.div>
 
             <motion.h1
@@ -176,7 +178,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }
