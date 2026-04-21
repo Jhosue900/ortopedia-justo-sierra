@@ -25,7 +25,7 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-4 ${
         scrolled ? 'bg-[#002855]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
@@ -35,12 +35,12 @@ export default function Navbar() {
             <img src={LOGO} alt="Ortopedia Justo Sierra" className="w-32 h-8 sm:w-50 sm:h-10" />
           </a>
 
-          <ul className="hidden lg:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-8 border border-[#c0c0c0] px-[30px] py-[6px] rounded-[30px]">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-white/90 hover:text-white text-sm font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-400 after:transition-all hover:after:w-full"
+                  className="text-white hover:text-white text-sm font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-400 after:transition-all hover:after:w-full"
                 >
                   {link.label}
                 </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[#003366] text-sm font-semibold rounded-full hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-7 py-2.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               Agenda Ahora  →
             </a>
