@@ -21,7 +21,7 @@ const specialties = [
 
 export default function Specialties() {
   return (
-    <section className="py-24 bg-slate-50" id="especialidades">
+    <section className="py-24 bg-[#f3f3f3]" id="especialidades">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Header de la sección */}
         <motion.div
@@ -30,7 +30,7 @@ export default function Specialties() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <span className="px-4 py-1.5 bg-blue-50 text-blue-600 text-xs font-bold tracking-widest uppercase rounded-full mb-6 inline-block">
+          <span className="px-4 py-1.5 bg-[#a4d1ff] text-[#003e7c] text-xs font-bold tracking-tight uppercase rounded-full mb-2 inline-block">
             Especialidades
           </span>
 
@@ -48,7 +48,7 @@ export default function Specialties() {
         </motion.div>
 
         {/* Grid de Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {specialties.map((item, index) => (
             <motion.div
               key={index}
@@ -78,7 +78,7 @@ export default function Specialties() {
                 }`}>
                   {item.title}
                 </h3>
-                <p className={`text-base leading-relaxed mb-6 transition-colors tracking-tight duration-500 ${
+                <p className={`text-base leading-snug mb-6 transition-colors tracking-tight !max-w-full duration-500 ${
                   'group-hover:text-blue-50 text-black'
                 }`}>
                   {item.description}
