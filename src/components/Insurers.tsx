@@ -69,35 +69,7 @@ export default function Insurers() {
         <LogoCarousel logos={insurerLogos} reverse speed={22} />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16"
-      >
-        <div className="bg-gradient-to-br from-[#002855] to-[#004080] rounded-3xl p-10 text-center text-white shadow-2xl">
-          <h3 className="text-2xl sm:text-3xl font-extrabold mb-4">¿Listo para recuperar tu movilidad?</h3>
-          <p className="text-blue-200 mb-8 max-w-lg mx-auto">
-            Agenda tu consulta hoy y da el primer paso hacia una vida sin dolor. Nuestros especialistas están listos para atenderte.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+525500000000"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-[#003366] font-bold rounded-full hover:bg-blue-50 transition-all shadow-lg hover:-translate-y-0.5"
-            >
-              Llamar Ahora
-            </a>
-            <a
-              href="https://wa.me/525500000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-all shadow-lg hover:-translate-y-0.5"
-            >
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </motion.div>
+      
     </section>
   );
 }

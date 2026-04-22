@@ -38,7 +38,7 @@ export default function Certifications() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="especialidades" className="py-12 bg-white" ref={ref}>
+    <section id="especialidades" className="py-12 bg-slate-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
