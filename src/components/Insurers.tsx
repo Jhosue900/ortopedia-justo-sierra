@@ -3,25 +3,44 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import LogoCarousel from './LogoCarousel';
 
+// Al principio de Insurers.tsx, importa los assets
+import allianz from '../images/aseguradoras/Allianz-logo.png';
+import bbva from '../images/aseguradoras/BBVA seguros PNG.png';
+import vepormas from '../images/aseguradoras/Logo_del_Banco_Ve_por_Mas.svg.png';
+import mapfre from '../images/aseguradoras/Mapfre_logo.svg.png';
+import planSeguro from '../images/aseguradoras/Plan seguro logo.png';
+import axa from '../images/aseguradoras/axa-logo-0.png';
+import gnp from '../images/aseguradoras/gnp-seguros.png';
+import metlife from '../images/aseguradoras/metlife-logo-0.png';
+import sura from '../images/aseguradoras/png-clipart-grupo-sura.png';
+import banorte from '../images/aseguradoras/png-clipart-insurance-banorte-valladolid-insurer-axa-others-text-logo.png';
+import zurich from '../images/aseguradoras/png-clipart-zurich-insurance-group-logo-zurich.png';
+import monterrey from '../images/aseguradoras/seguros-monterrey-logo-png.png';
+
 const insurerLogos = [
-  { name: 'MAPFRE', abbr: 'MAPFRE', color: '#cc0000' },
-  { name: 'MetLife', abbr: 'MET', color: '#005487' },
-  { name: 'Seguros Atlas', abbr: 'ATLAS', color: '#1b5e20' },
-  { name: 'Seguros Monterrey', abbr: 'SMN', color: '#003580' },
-  { name: 'GNP', abbr: 'GNP', color: '#e65100' },
-  { name: 'AXA', abbr: 'AXA', color: '#00008f' },
-  { name: 'Latino Seguros', abbr: 'LTNO', color: '#6a1b9a' },
-  { name: 'BUPA', abbr: 'BUPA', color: '#004f9f' },
-  { name: 'Zurich', abbr: 'ZURICH', color: '#0d47a1' },
-  { name: 'HDI', abbr: 'HDI', color: '#c62828' },
+  { name: 'GNP', src: gnp },
+  { name: 'Sura', src: sura },
+  { name: 'Mapfre', src: mapfre },
+  { name: 'Allianz', src: allianz },
+  { name: 'MetLife', src: metlife },
+  { name: 'BBVA', src: bbva },
+  { name: 'Seguros Monterrey', src: monterrey },
+  { name: 'Plan Seguro', src: planSeguro },
+  { name: 'Zurich', src: zurich },
+  { name: 'Banorte', src: banorte },  
+  { name: 'Ve por Más', src: vepormas },
+  { name: 'AXA', src: axa },
 ];
+
+
+
 
 export default function Insurers() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="contacto" className="py-20 bg-gray-50" ref={ref}>
+    <section id="contacto" className="py-12 bg-gray-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -47,7 +66,7 @@ export default function Insurers() {
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <LogoCarousel logos={insurerLogos} reverse grayscale speed={22} />
+        <LogoCarousel logos={insurerLogos} reverse speed={22} />
       </motion.div>
 
       <motion.div
