@@ -19,10 +19,10 @@ const googleReviews = [
 
 
 const videoTestimonials = [
-  { src: "/videos/testimonio1.mp4" },
-  { src: "/videos/testimonio2.mp4" },
-  { src: "/videos/testimonio3.mp4" },
-  { src: "/videos/testimonio4.mp4" },
+  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898593/testimonio1_g0xktc.mp4" },
+  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898584/testimonio2_uc9c8e.mp4" },
+  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898583/testimonio3_llb7oz.mp4" },
+  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898586/testimonio4_nzrbvq.mp4" },
 ];
 
 export default function Testimonial() {
