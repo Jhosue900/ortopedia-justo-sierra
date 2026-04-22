@@ -159,7 +159,7 @@ export default function Hero() {
                 );
               })}
 
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+              <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
                 {surgeonImages.map((_, i) => (
                   <button
                     key={i}
