@@ -5,6 +5,7 @@ import Insurers from './components/Insurers';
 import Specialties from './components/Specialties';
 import Team from './components/Team';
 import Process from './components/Process';
+import Testimonial from './components/Testimonial';
 import WhatsAppButton from './components/WhatsAppButton';
 import Footer from './components/Footer';
 
@@ -18,6 +19,7 @@ function App() {
       <Specialties />
       <Team />
       <Process />
+      <Testimonial />
       <Footer />
       <WhatsAppButton />
     </div>
