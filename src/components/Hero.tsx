@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ChevronRight, Award, Shield, Clock } from 'lucide-react';
+import { Calendar, ChevronRight } from 'lucide-react';
 import HeroBG from '../images/HeroBG.jpeg';
 
-const surgeonImages = [
-  'https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800',
-];
+// Importación de tus imágenes locales
+import dr1 from '../images/hero/84-IMG_3711.jpg';
+import dr2 from '../images/hero/119-IMG_3620.jpg';
+import dr3 from '../images/hero/129-IMG_3597.jpg';
+import dr4 from '../images/hero/IMG_2774.jpeg';
+import dr5 from '../images/hero/IMG_6620.jpeg';
+
+const surgeonImages = [dr1, dr2, dr3, dr4, dr5];
 
 
 
@@ -24,10 +26,8 @@ export default function Hero() {
 
   const getStackPosition = (index: number) => {
     const total = surgeonImages.length;
-    // Calculamos la distancia relativa al centro (-1, 0, 1, etc.)
     let diff = index - activeIndex;
     
-    // Ajuste para que sea un carrusel infinito circular
     if (diff > total / 2) diff -= total;
     if (diff < -total / 2) diff += total;
 
@@ -36,11 +36,11 @@ export default function Hero() {
 
     return {
       zIndex: 40 - absDiff * 10,
-      x: diff * 120, // Desplazamiento horizontal (ajusta este número según desees)
-      scale: isCenter ? 1 : 0.8,
-      opacity: isCenter ? 1 : 0.6,
-      grayscale: isCenter ? 0 : 1, // 0 es color, 1 es blanco y negro
-      brightness: isCenter ? 1 : 0.7,
+      x: diff * 160, // Espaciado horizontal elegante
+      scale: isCenter ? 1 : 0.85,
+      opacity: absDiff > 1 ? 0 : isCenter ? 1 : 0.4, // Solo muestra la central y las 2 de los lados
+      grayscale: isCenter ? 0 : 0.5, // Menos agresivo el blanco y negro
+      brightness: isCenter ? 1 : 0.8,
     };
   };
 
@@ -55,14 +55,14 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#003c7fcc]/80" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.15),transparent_100%)]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-[13rem]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[7rem] pb-[13rem]">
         <div className="flex flex-col gap-4 lg:gap-4 items-center">
           <div className="order-2 lg:order-1 text-center flex flex-col items-center justify-center pt-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-6 py-1.5 bg-transparent border border-white rounded-full mb-4"
+              className="inline-flex items-center gap-2 px-6 py-[3px] bg-transparent border border-gray-200/50 rounded-full mb-2"
             >
               <span className="w-3 h-3 bg-green-400 rounded-full animate-pulse" /> 
               <span className="text-white text-sm font-bold tracking-tight">Expertos Subespecialistas</span>
@@ -86,10 +86,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-white text-lg leading-relaxed mb-4 max-w-3xl"
+              className="text-white text-lg leading-relaxed mb-4 max-w-[40rem] tracking-tight"
             >
               Recupera tu calidad de vida con tecnología de punta y cirujanos con certificación internacional.
-              Atención pluralista para pacientes con diagnóstico complejo.
+              Atención priorista para pacientes con diagnóstico.
             </motion.p>
 
             <motion.div
@@ -110,7 +110,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-3 px-6 py-1 border-white/20 backdrop-blur-sm rounded-full">
                 <div className="text-start">
                   <p className="text-white font-bold text-base leading-tight">10,000+</p>
-                  <p className="text-blue-300 text-base leading-tight">Procedimientos Quirúrgicos</p>
+                  <p className="text-white text-base leading-tight">Procedimientos Quirúrgicos</p>
                 </div>
               </div>
             </motion.div>
@@ -149,7 +149,7 @@ export default function Hero() {
                       <img
                         src={src}
                         alt="Cirujano especialista"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover grayscale"
                         loading="eager"
                       />
                       {/* Overlay sutil para mejorar el contraste del texto si decides ponerle encima */}

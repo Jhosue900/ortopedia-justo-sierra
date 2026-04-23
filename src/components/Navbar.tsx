@@ -35,7 +35,7 @@ export default function Navbar() {
             <img src={LOGO} alt="Ortopedia Justo Sierra" className="w-32 h-8 sm:w-50 sm:h-10" />
           </a>
 
-          <ul className="hidden lg:flex items-center gap-8 border border-[#c0c0c0] px-[30px] py-[6px] rounded-[30px]">
+          <ul className="hidden lg:flex items-center gap-8 border border-gray-200/50 px-[30px] py-[6px] rounded-[30px]">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
