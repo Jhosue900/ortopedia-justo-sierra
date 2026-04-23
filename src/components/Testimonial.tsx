@@ -30,33 +30,7 @@ export default function Testimonial() {
   return (
     <section className="py-24 bg-white overflow-hidden" id="testimonios">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Parte Superior: Stacked Images (Imagen 1) */}
-        {/* Parte Superior: Stacked Images */}
-        <div className="mb-24 relative h-[300px] md:h-[450px] flex justify-center items-center">
-          <div className="absolute inset-0 bg-blue-900/5 rounded-[3rem] -rotate-1 scale-105" />
-          {[
-            "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800",
-            "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=800",
-            "https://images.unsplash.com/photo-1579154235602-3c2c2446026b?q=80&w=800"
-          ].map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="absolute w-48 md:w-72 aspect-[3/4] rounded-2xl overflow-hidden border-4 border-white shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
-              style={{ 
-                zIndex: 3 - i,
-                transform: `translateX(${(i - 1) * 80}px) rotate(${(i - 1) * 5}deg)`
-              }}
-            >
-              <img src={img} className="w-full h-full object-cover" alt="Cirugía" />
-            </motion.div>
-          ))}
-        </div>
-        
+                
 
         {/* Header de Reseñas */}
         <div className="text-center mb-16">
