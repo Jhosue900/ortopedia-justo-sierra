@@ -1,111 +1,83 @@
-import { Stethoscope, Phone, Mail, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
-
-const specialties = [
-  'Cirugía de Columna',
-  'Reemplazo de Rodilla',
-  'Reemplazo de Cadera',
-  'Cirugía de Hombro',
-  'Cirugía de Pie y Tobillo',
-  'Artroscopia',
-];
+import { Facebook, Instagram, Calendar } from 'lucide-react';
+import logo from '../images/LOGO.png';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#001a3d] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
-                <Stethoscope className="w-5 h-5 text-[#003366]" />
-              </div>
-              <div>
-                <p className="font-bold text-sm leading-tight">ORTOPEDIA</p>
-                <p className="text-blue-400 text-xs leading-tight font-medium tracking-widest">JUSTO SIERRA</p>
-              </div>
-            </div>
-            <p className="text-blue-200/70 text-sm leading-relaxed mb-6">
-              Clínica líder en ortopedia y traumatología con más de 25 años de experiencia y más de 10,000 procedimientos exitosos.
+    <footer className="bg-[#0a1628] text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Sección Superior: CTA */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-16">
+          <h3 className="text-3xl md:text-4xl font-bold max-w-3xl leading-tight tracking-tight text-center md:text-left">
+            El siguiente paso hacia una vida sin dolor comienza con la asesoría médica correcta.
+          </h3>
+          <button className="bg-white text-[#0a1628] px-8 py-3.5 rounded-full font-bold flex items-center gap-2 hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg flex-shrink-0">
+            Agenda Cita <Calendar className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Línea Divisora */}
+        <div className="h-[1px] bg-white/20 w-full mb-16" />
+
+        {/* Sección Media: Info y Logo */}
+        <div className="grid md:grid-cols-2 gap-8 items-start mb-20">
+          
+          {/* Columna Izquierda: Datos */}
+          <div className="space-y-8 w-[110%] tracking-tight">
+            <p className="text-blue-100/70 text-lg leading-relaxed !max-w-full">
+              Somos un equipo de médicos cirujanos especialistas en Traumatología y Ortopedia con sede en la ciudad de Guadalajara Jal. México
             </p>
-            <div className="flex gap-3">
-              {[Facebook, Instagram, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors duration-200"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest text-blue-300 mb-5">Especialidades</h4>
-            <ul className="space-y-2.5">
-              {specialties.map((s) => (
-                <li key={s}>
-                  <a href="#especialidades" className="text-blue-200/70 hover:text-white text-sm transition-colors">
-                    {s}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest text-blue-300 mb-5">Clínica</h4>
-            <ul className="space-y-2.5">
-              {['Nuestro Equipo', 'Instalaciones', 'Testimonios', 'Blog', 'Preguntas Frecuentes', 'Trabaja con Nosotros'].map((l) => (
-                <li key={l}>
-                  <a href="#" className="text-blue-200/70 hover:text-white text-sm transition-colors">
-                    {l}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest text-blue-300 mb-5">Contacto</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
-                <span className="text-blue-200/70 text-sm">Av. Justo Sierra 1234, Col. Centro, CDMX, México</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="tel:+525500000000" className="text-blue-200/70 hover:text-white text-sm transition-colors">
-                  +52 55 0000 0000
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="mailto:info@ortopediajustusierra.mx" className="text-blue-200/70 hover:text-white text-sm transition-colors">
-                  info@ortopediajustusierra.mx
-                </a>
-              </li>
-            </ul>
-            <div className="mt-6 p-3 bg-white/5 rounded-xl border border-white/10">
-              <p className="text-xs text-blue-300 font-semibold mb-0.5">Horario de Atención</p>
-              <p className="text-blue-200/70 text-xs">Lun – Vie: 8:00 – 20:00</p>
-              <p className="text-blue-200/70 text-xs">Sáb: 9:00 – 14:00</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-blue-300/60 text-xs">
-            © {new Date().getFullYear()} Ortopedia Justo Sierra. Todos los derechos reservados.
-          </p>
-          <div className="flex gap-6">
-            {['Aviso de Privacidad', 'Términos de Uso', 'Cookies'].map((l) => (
-              <a key={l} href="#" className="text-blue-300/60 hover:text-white text-xs transition-colors">
-                {l}
+            
+            <div className="space-y-4">
+              <a 
+                href="tel:+523335596152" 
+                className="block text-xl font-semibold hover:text-blue-300 transition-colors"
+              >
+                (+52) 33 3559 6152
               </a>
-            ))}
+              <p className="text-blue-100/70 max-w-xs">
+                Calle Justo Sierra 2420, Ladrón De Guevara, <br />
+                C.P. 44130 Guadalajara, Jal. México
+              </p>
+            </div>
+
+            <a href="#" className="inline-block text-sm text-blue-100/60 hover:text-white underline underline-offset-4 transition-colors">
+              Aviso de Privacidad
+            </a>
+          </div>
+
+          {/* Columna Derecha: Logo y Social */}
+          <div className="flex flex-col items-center md:items-end gap-10">
+            <img 
+              src={logo} 
+              alt="Grupo Ortopedia Justo Sierra" 
+              className="h-24 md:h-28 object-contain"
+            />
+            
+            <div className="flex gap-4">
+              <a 
+                href="#" 
+                className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all border border-white/10"
+              >
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a 
+                href="#" 
+                className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all border border-white/10"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* Sección Inferior: Copyright */}
+        <div className="text-center pt-10 border-t border-white/5">
+          <p className="text-sm text-blue-100/30 font-medium tracking-wide">
+            Copyright © {new Date().getFullYear()} Grupo Ortopedia | Designed by weprom
+          </p>
+        </div>
+
       </div>
     </footer>
   );

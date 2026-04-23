@@ -6,6 +6,7 @@ import Specialties from './components/Specialties';
 import Team from './components/Team';
 import Process from './components/Process';
 import Testimonial from './components/Testimonial';
+import Facilities from './components/Facilities';
 import WhatsAppButton from './components/WhatsAppButton';
 import Footer from './components/Footer';
 
@@ -20,6 +21,7 @@ function App() {
       <Team />
       <Process />
       <Testimonial />
+      <Facilities />
       <Footer />
       <WhatsAppButton />
     </div>
