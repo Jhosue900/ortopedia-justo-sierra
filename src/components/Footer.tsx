@@ -17,14 +17,14 @@ export default function Footer() {
         </div>
 
         {/* Línea Divisora */}
-        <div className="h-[1px] bg-white/20 w-full mb-16" />
+        <div className="h-[2.5px] bg-white/30 w-full mb-16" />
 
         {/* Sección Media: Info y Logo */}
-        <div className="grid md:grid-cols-2 gap-8 items-start mb-20">
+        <div className="grid md:grid-cols-12 gap-8 items-start mb-20">
           
           {/* Columna Izquierda: Datos */}
-          <div className="space-y-8 w-[110%] tracking-tight">
-            <p className="text-blue-100/70 text-lg leading-relaxed !max-w-full">
+          <div className="md:col-span-7 space-y-8 tracking-tight">
+            <p className="text-blue-100/70 text-xl leading-relaxed tracking-tight">
               Somos un equipo de médicos cirujanos especialistas en Traumatología y Ortopedia con sede en la ciudad de Guadalajara Jal. México
             </p>
             
@@ -41,13 +41,13 @@ export default function Footer() {
               </p>
             </div>
 
-            <a href="#" className="inline-block text-sm text-blue-100/60 hover:text-white underline underline-offset-4 transition-colors">
+            <a href="#" className="inline-block text-lg text-blue-100/60 hover:text-white underline underline-offset-4 transition-colors">
               Aviso de Privacidad
             </a>
           </div>
 
           {/* Columna Derecha: Logo y Social */}
-          <div className="flex flex-col items-center md:items-end gap-10">
+          <div className="md:col-span-5 flex flex-col items-center md:items-center gap-10">
             <img 
               src={logo} 
               alt="Grupo Ortopedia Justo Sierra" 
@@ -73,7 +73,7 @@ export default function Footer() {
 
         {/* Sección Inferior: Copyright */}
         <div className="text-center pt-10 border-t border-white/5">
-          <p className="text-sm text-blue-100/30 font-medium tracking-wide">
+          <p className="text-sm text-gray-300/80 font-medium tracking-tight">
             Copyright © {new Date().getFullYear()} Grupo Ortopedia | Designed by weprom
           </p>
         </div>
