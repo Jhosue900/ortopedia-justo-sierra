@@ -60,10 +60,11 @@ export default function Process() {
                 </div>
 
                 {/* Texto */}
-                {/* Texto */}
                 {index === 0 ? (
                   <a 
-                    href="#contacto"
+                    href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xl font-extrabold mb-3 tracking-tight px-6 py-2 bg-transparent border border-white/20 rounded-full hover:bg-white/10 transition-all cursor-pointer inline-flex items-center"
                   >
                     {step.title}
@@ -71,6 +72,8 @@ export default function Process() {
                 ) : (
                   <h3 className="text-2xl font-extrabold mb-3 tracking-tight">{step.title}</h3>
                 )}
+
+
                 <p className="text-gray-200/80 text-base leading-relaxed max-w-[220px] tracking-tight pt-4">
                   {step.description}
                 </p>

@@ -99,7 +99,9 @@ export default function Hero() {
               className="flex flex-wrap gap-4 mb-4"
             >
               <a
-                href="#contacto"
+                href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-2 bg-white text-[#003366] font-bold text-base rounded-full hover:bg-blue-50 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 group"
               >
                 <Calendar className="w-4 h-4" />

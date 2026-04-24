@@ -11,9 +11,14 @@ export default function Footer() {
           <h3 className="text-3xl md:text-4xl font-bold max-w-3xl leading-tight tracking-tight text-center md:text-left">
             El siguiente paso hacia una vida sin dolor comienza con la asesoría médica correcta.
           </h3>
-          <button className="bg-white text-[#0a1628] px-8 py-3.5 rounded-full font-bold flex items-center gap-2 hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg flex-shrink-0">
+          <a 
+            href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#0a1628] px-8 py-3.5 rounded-full font-bold flex items-center gap-2 hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg flex-shrink-0"
+          >
             Agenda Cita <Calendar className="w-5 h-5" />
-          </button>
+          </a>
         </div>
 
         {/* Línea Divisora */}

@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="flex items-center gap-2 group">
-            <img src={LOGO} alt="Ortopedia Justo Sierra" className="w-32 h-8 sm:w-50 sm:h-10" />
+            <img src={LOGO} alt="Ortopedia Justo Sierra" className="w-[9rem] h-14 sm:w-50 sm:h-[3.2rem] max-[500px]:w-[5.5rem] max-[500px]:h-8" />
           </a>
 
           <ul className="hidden lg:flex items-center gap-8 border border-gray-200/50 px-[30px] py-[6px] rounded-[30px]">
@@ -50,8 +50,10 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <a
-              href="#contacto"
-              className="inline-flex items-center gap-2 px-7 py-2.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-2.5 bg-white text-black text-sm font-normal rounded-full hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               Agenda Ahora  →
             </a>
@@ -87,7 +89,9 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="#contacto"
+                href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="block px-4 py-3 bg-white text-[#003366] rounded-full text-sm font-semibold text-center hover:bg-blue-50 transition-colors"
               >
