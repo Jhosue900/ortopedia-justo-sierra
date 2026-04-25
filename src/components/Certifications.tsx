@@ -64,7 +64,7 @@ export default function Certifications() {
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        <LogoCarousel logos={certLogos} speed={28} />
+        <LogoCarousel logos={certLogos} speed={15} />
       </motion.div>
     </section>
   );
