@@ -34,11 +34,11 @@ export default function Testimonial() {
 
         {/* Header de Reseñas */}
         <div className="text-center mb-16">
-          <span className="px-4 py-1.5 bg-[#a4d1ff] text-blue-600 text-xs font-bold tracking-tight uppercase rounded-full mb-4 inline-block">
+          <span className="px-4 py-1.5 bg-[#a4d1ff] text-[#11327c] text-xs font-bold tracking-tight uppercase rounded-full mb-4 inline-block">
             Testimonios
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-            Pacientes <span className="text-blue-700 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600">Sin Dolor</span>
+            Pacientes Sin <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001529] from-1% to-[#0066cc]">Dolor</span>
           </h2>
         </div>
 

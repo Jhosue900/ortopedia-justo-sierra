@@ -54,7 +54,7 @@ export default function Team() {
               Equipo
             </span>
             <h2 className="text-4xl sm:text-4xl font-bold text-gray-900 tracking-tight !leading-[1.4] mb-4">
-              Un Experto para Cada <span className="text-[#003e7c]">Articulación.</span>
+              Un Experto para Cada <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001529] from-30% to-[#0066cc]">Articulación.</span>
             </h2>
             <p className="text-slate-500 text-lg mb-8 leading-relaxed">
               Competimos con excelencia diagnóstica y destreza quirúrgica. Años de entrenamiento respaldan cada incisión.

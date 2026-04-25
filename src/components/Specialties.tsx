@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useState } from 'react';
 
 const specialties = [
   {
@@ -20,6 +21,7 @@ const specialties = [
 ];
 
 export default function Specialties() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   return (
     <section className="py-24 bg-[#f3f3f3]" id="especialidades">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -37,7 +39,7 @@ export default function Specialties() {
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight !leading-snug pb-4">
             Soluciones Quirúrgicas <br />
             de Alta{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003366] to-[#0066cc]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001529] from-30% to-[#0066cc]">
               Especialidad
             </span>
           </h2>
@@ -49,52 +51,60 @@ export default function Specialties() {
 
         {/* Grid de Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {specialties.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative h-[380px] rounded-[2rem] overflow-hidden bg-white border border-slate-100 transition-all duration-500 hover:shadow-2xl"
-            >
-              {/* Imagen de fondo (invisible por defecto, aparece en hover) */}
-              <div 
-                className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
+          {specialties.map((item, index) => {
+            const isActive = activeIndex === index;
+          
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                onMouseEnter={() => setActiveIndex(index)}
+                // Al salir del grid completo podrías resetear a 0, 
+                // pero dejarla fija en la última que tocó suele ser mejor UX.
+                className="group relative h-[380px] rounded-[2rem] overflow-hidden bg-white border border-slate-100 transition-all duration-500 hover:shadow-2xl"
               >
-                {/* Overlay oscuro para legibilidad */}
-                <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[2px]" />
-              </div>
-
-              {/* Contenido de la Card */}
-              <div className="relative z-10 h-full p-10 flex flex-col justify-end text-left">
-                <h3 className={`text-2xl font-bold mb-4 transition-colors tracking-tight duration-500 ${
-                  'group-hover:text-white text-slate-900'
-                }`}>
-                  {item.title}
-                </h3>
-                <p className={`text-base leading-snug mb-6 transition-colors tracking-tight !max-w-full duration-500 ${
-                  'group-hover:text-blue-50 text-black'
-                }`}>
-                  {item.description}
-                </p>
-                <a 
-                  href="#" 
-                  className={`inline-flex items-center gap-2 text-sm font-bold transition-all duration-500 ${
-                    'group-hover:text-white text-slate-900'
+                {/* Imagen de fondo condicionada por isActive */}
+                <div 
+                  className={`absolute inset-0 z-0 transition-opacity duration-700 ease-in-out ${
+                    isActive ? 'opacity-100' : 'opacity-0'
                   }`}
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
                 >
-                  Más Información
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
+                  <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[2px]" />
+                </div>
+          
+                {/* Contenido de la Card condicionado por isActive */}
+                <div className="relative z-10 h-full p-10 flex flex-col justify-end text-left">
+                  <h3 className={`text-2xl font-bold mb-4 transition-colors tracking-tight duration-500 ${
+                    isActive ? 'text-white' : 'text-slate-900'
+                  }`}>
+                    {item.title}
+                  </h3>
+                  <p className={`text-base leading-snug mb-6 transition-colors tracking-tight !max-w-full duration-500 ${
+                    isActive ? 'text-blue-50' : 'text-black'
+                  }`}>
+                    {item.description}
+                  </p>
+                  <a 
+                    href="#" 
+                    className={`inline-flex items-center gap-2 text-sm font-bold transition-all duration-500 ${
+                      isActive ? 'text-white' : 'text-slate-900'
+                    }`}
+                  >
+                    Más Información
+                    <ArrowRight className={`w-4 h-4 transition-transform ${isActive ? 'translate-x-1' : ''}`} />
+                  </a>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

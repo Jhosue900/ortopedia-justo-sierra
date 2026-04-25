@@ -26,7 +26,7 @@ export default function Facilities() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-            Conoce Nuestras <span className="text-blue-700">Instalaciones</span>
+            Conoce Nuestras <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001529] from-1% to-[#0066cc]">Instalaciones</span>
           </h2>
         </div>
 
