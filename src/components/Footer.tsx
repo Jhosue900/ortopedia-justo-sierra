@@ -61,13 +61,13 @@ export default function Footer() {
             
             <div className="flex gap-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=61552806762042" 
                 className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all border border-white/10"
               >
                 <Facebook className="w-6 h-6" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/traumatologo_/" 
                 className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all border border-white/10"
               >
                 <Instagram className="w-6 h-6" />
