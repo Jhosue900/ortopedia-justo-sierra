@@ -72,7 +72,7 @@ export default function Facilities() {
           className="mt-16 rounded-[1rem] overflow-hidden shadow-2xl border-4 border-white h-[450px] relative group"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3727.026413726584!2d-89.632924!3d20.991583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5671607f0f6f0f%3A0x0!2zMjDCsDU5JzI5LjciTiA4OcKwMzcnNTguNSJX!5e0!3m2!1ses-419!2smx!4v1713830000000!5m2!1ses-419!2smx"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8228514120387!2d-103.3857502!3d20.6767858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae097063459d%3A0xc682976c6b290b2e!2sC.%20Justo%20Sierra%202420%2C%20Ladr%C3%B3n%20de%20Guevara%2C%20Americana%2C%2044600%20Guadalajara%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1715456000000!5m2!1ses-419!2smx"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -86,9 +86,11 @@ export default function Facilities() {
           {/* Badge de Dirección Flotante */}
           <div className="absolute bottom-6 left-6 right-6 md:left-auto md:right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-200 max-w-sm">
             <p className="text-xs font-bold text-blue-700 uppercase tracking-widest mb-1">Nuestra Ubicación</p>
+
             <p className="text-slate-800 font-semibold text-sm">
-              Av. Justo Sierra, García Ginerés, 97070 Mérida, Yuc., México
+              Calle Justo Sierra 2420, Ladrón De Guevara, C.P. 44130 Guadalajara, Jal. México
             </p>
+
           </div>
         </motion.div>
 
