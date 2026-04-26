@@ -57,7 +57,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[7rem] pb-[13rem]">
         <div className="flex flex-col gap-4 lg:gap-4 items-center">
-          <div className="order-2 lg:order-1 text-center flex flex-col items-center justify-center pt-3">
+          <div className="order-1 text-center flex flex-col items-center justify-center pt-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl sm:text-5xl lg:text-6xl font-extrabold text-white !leading-[1.3] tracking-tighter mb-4 max-w-4xl"
+              className="text-5xl lg:text-6xl font-extrabold text-white !leading-[1.3] tracking-tighter mb-4 max-w-4xl max-[1020px]:max-w-3xl max-[740px]:text-[2.4rem] max-[740px]:max-w-xl max-[585px]:text-[1.8rem]"
             >
               Unidad de{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
@@ -86,7 +86,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-white text-lg leading-relaxed mb-4 max-w-[40rem] tracking-tight"
+              className="text-white text-lg leading-relaxed mb-4 max-w-[40rem] tracking-tight max-[740px]:text-[1rem] max-[740px]:max-w-[33rem]"
             >
               Recupera tu calidad de vida con tecnología de punta y cirujanos con certificación internacional.
               Atención priorista para pacientes con diagnóstico.
@@ -96,7 +96,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-wrap gap-4 mb-4"
+              className="flex flex-wrap gap-4 mb-4 justify-center"
             >
               <a
                 href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."

@@ -29,10 +29,10 @@ export default function Navbar() {
         scrolled ? 'bg-[#002855]/95 pt-0 backdrop-blur-md shadow-lg' : 'bg-transparent pt-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8  sm:px-10 lg:px-10 py-2">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="flex items-center gap-2 group">
-            <img src={LOGO} alt="Ortopedia Justo Sierra" className="w-[9rem] h-14 sm:w-50 sm:h-[3.2rem] max-[500px]:w-[5.5rem] max-[500px]:h-8" />
+            <img src={LOGO} alt="Ortopedia Justo Sierra" className="w-[9rem] h-14 sm:w-50 sm:h-[3.2rem] max-[500px]:w-[6.7rem] max-[500px]:h-[2.8rem]" />
           </a>
 
           <ul className="hidden lg:flex items-center gap-8 border border-gray-200/50 px-[30px] py-[6px] rounded-[30px]">
@@ -64,7 +64,7 @@ export default function Navbar() {
             className="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileOpen ? <X className="w-10 h-10" /> : <Menu className="w-10 h-10 max-[500px]:h-8" />}
           </button>
         </div>
       </div>
