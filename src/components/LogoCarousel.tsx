@@ -15,6 +15,10 @@ interface LogoCarouselProps {
 export default function LogoCarousel({ logos, reverse = false, grayscale = false, speed = 30 }: LogoCarouselProps) {
   const duplicated = [...logos, ...logos, ...logos];
 
+  const adaptiveSpeed = typeof window !== 'undefined' && window.innerWidth < 768 
+    ? speed / 2 
+    : speed;
+
   return (
     <div className="relative overflow-hidden w-full">
       <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
@@ -22,7 +26,7 @@ export default function LogoCarousel({ logos, reverse = false, grayscale = false
 
       <div
         className={`flex items-center gap-4 ${reverse ? 'animate-carousel-reverse' : 'animate-carousel'}`}
-        style={{ animationDuration: `${speed}s` }}
+        style={{ animationDuration: `${adaptiveSpeed}s` }}
       >
         {duplicated.map((logo, i) => (
           <div

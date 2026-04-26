@@ -66,7 +66,7 @@ export default function Insurers() {
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <LogoCarousel logos={insurerLogos} reverse speed={15} />
+        <LogoCarousel logos={insurerLogos} reverse speed={20} />
       </motion.div>
 
       
