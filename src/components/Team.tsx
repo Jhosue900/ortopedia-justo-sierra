@@ -3,39 +3,54 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, X, Calendar } from 'lucide-react';
 
 // --- IMPORTACIONES DE IMÁGENES DEL EQUIPO ---
-import imgChavez from '../images/team/Dr. Chavez P.jpeg';
-import imgRodriguez from '../images/team/Dr. Oscar Rguez.jpeg';
-import imgSchiavon from '../images/team/Dr. Schiavon1.jpeg';
+import imgChavez from '../images/team/Dr. Johnatan Germán Chávez Padilla(principal).jpg';
+import imgRodriguez from '../images/team/Dr. Oscar Rodríguez(principal).jpg';
+import imgSchiavon from '../images/team/Dr. Miguel Ángel Schiavon legorreta-(principal).jpg';
+import imgFajardo from '../images/team/Dr.Alan Miguel Fajardo(principal).jpg';
+import imgGaribaldi from '../images/team/Dr. Garibaldi Corral Luis Francisco(principal).jpg';
+
+
+import imgChavez2 from '../images/team/Dr. Johnatan Germán Chávez Padilla-2.jpg';
+import imgRodriguez2 from '../images/team/Dr. Oscar Rodríguez-2.jpg';
+import imgSchiavon2 from '../images/team/Dr. Miguel Ángel Schiavon legorreta-2.jpg';
+import imgFajardo2 from '../images/team/Dr.Alan Miguel Fajardo-2.jpg';
+import imgGaribaldi2 from '../images/team/Dr. Garibaldi Corral Luis Francisco-2.jpg';
+
 
 const team = [
   {
     name: "Dr. Johnatan Chávez Padilla",
     role: "Traumatólogo Ortopedista",
     image: imgChavez,
+    imageHover: imgChavez2,
     bio: "Especialista en Ortopedia y Traumatología (UAG) con 14 años de experiencia. Cuenta con un Máster en Cirugía Avanzada de Rodilla por la Clínica CEMTRO (España). Certificado por el CMOT. Miembro activo de CMOJAL, FEMECOT, AMJ, AMECRA e ISAKOS."
   },
   {
     name: "Dr. Óscar Rodríguez Gutiérrez",
     role: "Traumatólogo Ortopedista",
     image: imgRodriguez,
+    imageHover: imgRodriguez2,
     bio: "Especialista en Ortopedia y Traumatología (UdeG) con 13 años de experiencia y adiestramiento enfocado en Cirugía de Columna (IMSS CMNO). Certificado por el CMOT. Es miembro de destacadas asociaciones: CMOJAL, FEMECOT, AMJ y AMCICO."
   },
   {
     name: "Dr. Miguel Ángel Schiavon Legorreta",
     role: "Traumatólogo Ortopedista",
     image: imgSchiavon,
+    imageHover: imgSchiavon2,
     bio: "Médico especialista en Ortopedia y Traumatología (Univ. Cuauhtémoc) con 4 años de experiencia clínica. Avalado por su certificación vigente del CMOT. Forma parte activa de importantes colegios y asociaciones: CYOT, FEMECOT y AMECRA."
   },
   {
     name: "Dr. Alan Miguel Fajardo Mejía",
     role: "Traumatólogo Ortopedista",
-    image: "https://www.shutterstock.com/image-photo/smiling-doctor-stethoscope-clipboard-on-600nw-2536277671.jpg",
+    image: imgFajardo,
+    imageHover: imgFajardo2,
     bio: "Especialista en Ortopedia y Traumatología (UdeG) con 2 años de experiencia. Destaca por su subespecialidad en Artroscopia y Lesiones Deportivas avalada por el Hospital Civil de Guadalajara. Médico altamente capacitado y certificado por el CMOT."
   },
   {
     name: "Dr. Luis Francisco Garibaldi Corral",
     role: "Traumatólogo Ortopedista",
-    image: "https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",
+    image: imgGaribaldi,
+    imageHover: imgGaribaldi2,
     bio: "Médico especialista en Ortopedia y Traumatología (UdeG) con 2 años de experiencia brindando atención de calidad. Cuenta con la certificación oficial del CMOT y es miembro activo de asociaciones de gran prestigio como CMOJAL, FEMECOT y AMJ."
   }
 ];
@@ -75,19 +90,29 @@ export default function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative h-[450px] rounded-[2rem] overflow-hidden bg-[#e6f0ff] transition-all duration-500 cursor-pointer"
+              className="group relative h-[620px] rounded-[2rem] overflow-hidden bg-[#e6f0ff] transition-all duration-500 cursor-pointer"
             >
               {/* Fondo con degradado en Hover */}
               {/* Fondo con degradado en Hover (Ajustado a z-0) */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-b from-[#003c7f] to-slate-950 z-0" />
 
               {/* Imagen del Doctor (Ajustada a z-10 y fondo transparente) */}
+              {/* Contenedor de Imágenes con Crossfade */}
               <div className="absolute inset-0 z-10 p-4 pb-32">
-                <img 
-                  src={doc.image} 
-                  alt={doc.name}
-                  className="w-full h-full object-cover rounded-[1.5rem] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                />
+                <div className="relative w-full h-full overflow-hidden rounded-[1.5rem]">
+                  {/* Imagen Principal */}
+                  <img 
+                    src={doc.image} 
+                    alt={doc.name}
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:scale-110"
+                  />
+                  {/* Imagen Secundaria (Hover) */}
+                  <img 
+                    src={doc.imageHover} 
+                    alt={`${doc.name} secundario`}
+                    className="absolute inset-0 w-full h-full object-cover object-top opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-in-out"
+                  />
+                </div>
               </div>
 
               {/* Información Inferior */}
@@ -131,6 +156,8 @@ export default function Team() {
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               className="relative bg-white w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-2xl z-10"
             >
+
+
               <div className="p-8 md:p-12">
                 <button 
                   onClick={() => setSelectedDoctor(null)}
@@ -144,6 +171,8 @@ export default function Team() {
                   <h3 className="text-3xl font-bold text-slate-900">{selectedDoctor.name}</h3>
                   <p className="text-blue-600 font-semibold">{selectedDoctor.role}</p>
                 </div>
+
+                
                 
                 <p className="text-slate-600 text-lg leading-relaxed mb-8">
                   {selectedDoctor.bio}
