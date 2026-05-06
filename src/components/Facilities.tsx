@@ -1,22 +1,34 @@
 import { motion } from 'framer-motion';
 
 // Importa tus recursos aquí
-import img1 from '../images/instalaciones/IMG_4451.jpeg';
-import img2 from '../images/instalaciones/IMG_8649.jpeg';
-import img3 from '../images/instalaciones/IMG_8656.jpeg';
-import img4 from '../images/instalaciones/IMG_8660.jpeg';
-import img5 from '../images/instalaciones/IMG_8654.jpeg';
-import img6 from '../images/instalaciones/IMG_8658.jpeg';
-import vid1 from '../images/instalaciones/IMG_7443.mp4';
+// --- NUEVAS IMPORTACIONES DE INSTALACIONES ---
+import img0296 from '../images/instalaciones/new/IMG_0296.jpg';
+import img0297 from '../images/instalaciones/new/IMG_0297 (1).jpg';
+import img0300 from '../images/instalaciones/new/IMG_0300.jpg';
+import img0303 from '../images/instalaciones/new/IMG_0303.jpg';
+import img0305 from '../images/instalaciones/new/IMG_0305.jpg';
+import img0306 from '../images/instalaciones/new/IMG_0306.jpg';
+import img0308 from '../images/instalaciones/new/IMG_0308.jpg';
+import img0309 from '../images/instalaciones/new/IMG_0309.jpg';
+import img0313 from '../images/instalaciones/new/IMG_0313.jpg';
+import img0319 from '../images/instalaciones/new/IMG_0319.jpg';
+import img0321 from '../images/instalaciones/new/IMG_0321.jpg';
+import img0324 from '../images/instalaciones/new/IMG_0324.jpg';
+
 
 const media = [
-  { type: 'image', src: img1 },
-  { type: 'image', src: img2 },
-  { type: 'image', src: img3 },
-  { type: 'video', src: vid1 },
-  { type: 'image', src: img4 },
-  { type: 'image', src: img5 },
-  { type: 'image', src: img6 },
+  { type: 'image', src: img0296 },
+  { type: 'image', src: img0297 },
+  { type: 'image', src: img0300 },
+  { type: 'image', src: img0303 },
+  { type: 'image', src: img0305 },
+  { type: 'image', src: img0306 },
+  { type: 'image', src: img0308 },
+  { type: 'image', src: img0309 },
+  { type: 'image', src: img0313 },
+  { type: 'image', src: img0319 },
+  { type: 'image', src: img0321 },
+  { type: 'image', src: img0324 },
 ];
 
 export default function Facilities() {
@@ -31,39 +43,52 @@ export default function Facilities() {
         </div>
 
         {/* Grid de Instalaciones */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2">
+        {/* Grid de Instalaciones - Ajustado para 13 elementos */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-2">
           {media.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative h-[300px] md:h-[350px] rounded-[1rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+              transition={{ 
+                delay: index * 0.05,
+                duration: 0.5,
+                ease: "easeOut"
+              }}
+              // Hacemos que algunas imágenes (como el video o la primera) resalten ocupando más espacio
+              className={`group relative overflow-hidden rounded-2xl bg-slate-200 shadow-sm hover:shadow-2xl transition-all duration-500 h-[200px] md:h-[280px]
+                ${item.type === 'video' ? 'col-span-2 row-span-1 md:col-span-2' : 'col-span-1'}
+              `}
             >
               {item.type === 'image' ? (
                 <img 
                   src={item.src} 
                   alt={`Instalación ${index}`} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  loading="lazy"
                 />
               ) : (
                 <video 
                   src={item.src} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   muted
                   loop
                   autoPlay
                   playsInline
                 />
               )}
-              {/* Overlay sutil al hacer hover */}
-              <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              {/* Overlay de diseño moderno */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001529]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Indicador visual para Video si fuera necesario */}
+              
             </motion.div>
           ))}
         </div>
-
-
+        
+        
         {/* Mapa Interactivo */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
