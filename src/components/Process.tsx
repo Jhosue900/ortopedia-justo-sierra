@@ -26,7 +26,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="pt-24 pb-32 bg-[#0a1526] text-white" id="proceso">
+    <section className="py-16 md:pt-24 md:pb-32 bg-[#0a1526] text-white" id="proceso">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -44,7 +44,7 @@ export default function Process() {
           {/* Línea conectora horizontal (solo en desktop) */}
           <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-[2px] bg-blue-900/50" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-12">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -55,8 +55,8 @@ export default function Process() {
                 className="relative flex flex-col items-center text-center group"
               >
                 {/* Icono */}
-                <div className="relative z-10 w-20 h-20 rounded-[20px] bg-[#0a1526] border-2 border-blue-500/30 flex items-center justify-center mb-6 transition-all group-hover:border-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-                  <step.icon className="w-8 h-8 text-blue-400" />
+                <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 rounded-[20px] bg-[#0a1526] border-2 border-blue-500/30 flex items-center justify-center mb-4 md:mb-6 transition-all group-hover:border-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+                  <step.icon className="w-6 h-6 md:w-8 md:h-8 text-blue-400" />
                 </div>
 
                 {/* Texto */}
@@ -65,16 +65,16 @@ export default function Process() {
                     href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl font-extrabold mb-3 tracking-tight px-6 py-2 bg-transparent border border-white/20 rounded-full hover:bg-white/10 transition-all cursor-pointer inline-flex items-center"
+                    className="text-base md:text-xl font-extrabold mb-2 md:mb-3 tracking-tight px-4 md:px-6 py-1.5 md:py-2 bg-transparent border border-white/20 rounded-full hover:bg-white/10 transition-all cursor-pointer inline-flex items-center"
                   >
                     {step.title}
                   </a>
                 ) : (
-                  <h3 className="text-2xl font-extrabold mb-3 tracking-tight">{step.title}</h3>
+                  <h3 className="text-lg md:text-2xl font-extrabold mb-2 md:mb-3 tracking-tight">{step.title}</h3>
                 )}
 
 
-                <p className="text-gray-200/80 text-base leading-relaxed max-w-[220px] tracking-tight pt-4">
+                <p className="text-gray-200/80 text-xs md:text-base leading-relaxed max-w-[160px] md:max-w-[220px] tracking-tight pt-2 md:pt-4">
                   {step.description}
                 </p>
               </motion.div>

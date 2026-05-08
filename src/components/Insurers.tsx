@@ -33,8 +33,6 @@ const insurerLogos = [
 ];
 
 
-
-
 export default function Insurers() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -66,7 +64,7 @@ export default function Insurers() {
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <LogoCarousel logos={insurerLogos} reverse speed={20} />
+        <LogoCarousel logos={insurerLogos} reverse speed={12} />
       </motion.div>
 
       

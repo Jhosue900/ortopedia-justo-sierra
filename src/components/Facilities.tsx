@@ -17,8 +17,8 @@ import img0324 from '../images/instalaciones/new/IMG_0324.jpg';
 
 
 const media = [
-  { type: 'image', src: img0296 },
-  { type: 'image', src: img0297 },
+  /*{ type: 'image', src: img0296 },
+  { type: 'image', src: img0297 },*/
   { type: 'image', src: img0300 },
   { type: 'image', src: img0303 },
   { type: 'image', src: img0305 },
