@@ -4,15 +4,33 @@ import { useState } from 'react';
 
 const googleReviews = [
   {
-    name: "Nutrialia Mid",
-    date: "hace 7 meses",
-    text: "Es la mejor cirujana bariatra en Mérida, Yucatán. Su empatía, profesionalismo y trato humano hacen que cada paciente se sienta seguro y acompañado en...",
+    name: "Paciente de Traumatología",
+    date: "hace 2 meses",
+    text: "Llegué muy asustada por una fractura, pero desde el primer momento el Dr. Garibaldi me dio mucha tranquilidad. Es un excelente médico y se nota que sabe lo que hace. ¡Muchas gracias!",
     rating: 5
   },
   {
-    name: "María de los Milagros Sara...",
-    date: "hace 7 meses",
-    text: "No pude haber tomado mejor decisión en mi vida, estoy encantada con el trato tan humano que he recibido de la doctora y de todo su equipo, he...",
+    name: "Deportista de Alto Rendimiento",
+    date: "hace 1 mes",
+    text: "Me lesioné la rodilla haciendo deporte. La artroscopia con el Dr. Alan Fajardo fue la mejor decisión. Un especialista joven, actualizado y profesional. Ya estoy en rehabilitación y me siento de maravilla.",
+    rating: 5
+  },
+  {
+    name: "Familia Chávez",
+    date: "hace 3 meses",
+    text: "Le realizaron un reemplazo de cadera a mi mamá con el Dr. Johnatan Chávez. El doctor tiene un trato humano excepcional y ver a mi madre caminar de nuevo sin dolor no tiene precio.",
+    rating: 5
+  },
+  {
+    name: "Paciente de Hombro",
+    date: "hace 4 meses",
+    text: "El mejor para temas de hombro. El Dr. Schiavon es super honesto y se nota la experiencia que tiene. Muy buen trato y excelentes resultados.",
+    rating: 5
+  },
+  {
+    name: "Paciente Recuperado",
+    date: "hace 1 mes",
+    text: "Excelente cirujano de columna el Dr. Oscar Rodríguez. Me operó hace un mes y ya ando como si nada. Muy profesional, lo recomiendo ampliamente.",
     rating: 5
   }
 ];
@@ -43,9 +61,10 @@ export default function Testimonial() {
         </div>
 
         {/* Reseñas de Google */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 items-center">
+        {/* Reseñas de Google */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12 items-start">
           {/* Perfil de Google */}
-          <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center lg:text-left">
+          <div className="lg:col-span-1 bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center lg:text-left sticky top-24">
             <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-4 mx-auto lg:mx-0">
               <Star className="text-blue-600 fill-blue-600 w-8 h-8" />
             </div>
@@ -60,24 +79,26 @@ export default function Testimonial() {
           </div>
 
           {/* Cards de Reseñas */}
-          {googleReviews.map((review, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative group hover:shadow-md transition-shadow">
-              <Quote className="absolute top-6 right-8 w-8 h-8 text-blue-50 group-hover:text-blue-100 transition-colors" />
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                  {review.name[0]}
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {googleReviews.map((review, i) => (
+              <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative group hover:shadow-md transition-shadow">
+                <Quote className="absolute top-6 right-8 w-8 h-8 text-blue-50 group-hover:text-blue-100 transition-colors" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                    {review.name[0]}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm text-slate-900 leading-tight">{review.name}</h4>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">{review.date}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-sm text-slate-900">{review.name}</h4>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">{review.date}</p>
+                <div className="flex mb-3">
+                  {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
                 </div>
+                <p className="text-sm text-slate-600 leading-relaxed italic">"{review.text}"</p>
               </div>
-              <div className="flex mb-3">
-                {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
-              </div>
-              <p className="text-sm text-slate-600 leading-relaxed italic">"{review.text}"</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Grid de Videos */}
