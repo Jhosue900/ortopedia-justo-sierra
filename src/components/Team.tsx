@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, X, Calendar } from 'lucide-react';
 
 // --- IMPORTACIONES DE IMÁGENES DEL EQUIPO ---
-import imgChavez from '../images/team/Dr. Johnatan Germán Chávez Padilla(principal).jpg';
-import imgRodriguez from '../images/team/Dr. Oscar Rodríguez(principal).jpg';
-import imgSchiavon from '../images/team/Dr. Miguel Ángel Schiavon legorreta-(principal).jpg';
-import imgFajardo from '../images/team/Dr.Alan Miguel Fajardo(principal).jpg';
-import imgGaribaldi from '../images/team/Dr. Garibaldi Corral Luis Francisco(principal).jpg';
+import imgChavez from '../images/team/johnatan-german-main.jpg';
+import imgRodriguez from '../images/team/oscar-rodriguez-main.jpg';
+import imgSchiavon from '../images/team/miguel-angel-main.jpg';
+import imgFajardo from '../images/team/miguel-fajardo-main.jpg';
+import imgGaribaldi from '../images/team/garibaldi-corral-main.jpg';
 
 
-import imgChavez2 from '../images/team/Dr. Johnatan Germán Chávez Padilla-2.jpg';
-import imgRodriguez2 from '../images/team/Dr. Oscar Rodríguez-2.jpg';
-import imgSchiavon2 from '../images/team/Dr. Miguel Ángel Schiavon legorreta-2.jpg';
-import imgFajardo2 from '../images/team/Dr.Alan Miguel Fajardo-2.jpg';
-import imgGaribaldi2 from '../images/team/Dr. Garibaldi Corral Luis Francisco-2.jpg';
+import imgChavez2 from '../images/team/johnatan-german-2.jpg';
+import imgRodriguez2 from '../images/team/oscar-rodriguez-2.jpg';
+import imgSchiavon2 from '../images/team/miguel-angel-2.jpg';
+import imgFajardo2 from '../images/team/miguel-fajardo-2.jpg';
+import imgGaribaldi2 from '../images/team/garibaldi-corral-2.jpg';
 
 
 const team = [
