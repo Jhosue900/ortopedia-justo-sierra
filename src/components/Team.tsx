@@ -55,11 +55,24 @@ const team = [
   }
 ];
 
+
+// Componente invisible para precargar imágenes de hover
+const ImagePreloader = () => (
+  <div className="fixed opacity-0 pointer-events-none h-0 w-0 overflow-hidden" aria-hidden="true">
+    {team.map((doc, i) => (
+      <img key={i} src={doc.imageHover} alt="preload" />
+    ))}
+  </div>
+);
+
+
 export default function Team() {
   const [selectedDoctor, setSelectedDoctor] = useState<typeof team[0] | null>(null);
 
   return (
     <section className="py-24 bg-white" id="equipo">
+
+      <ImagePreloader />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
@@ -100,18 +113,37 @@ export default function Team() {
               {/* Contenedor de Imágenes con Crossfade */}
               <div className="absolute inset-0 z-10 p-4 pb-32">
                 <div className="relative w-full h-full overflow-hidden rounded-[1.5rem]">
+
+                  {/* Imagen Principal */}
+                  {/*<img 
+                    src={doc.image} 
+                    alt={doc.name}
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:scale-110"
+                  />*/}
+
+                  {/* Imagen Secundaria (Hover) */}
+                  {/*<img 
+                    src={doc.imageHover} 
+                    alt={`${doc.name} secundario`}
+                    className="absolute inset-0 w-full h-full object-cover object-top opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-in-out"
+                  />*/}
+
                   {/* Imagen Principal */}
                   <img 
                     src={doc.image} 
                     alt={doc.name}
-                    className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:scale-110"
+                    loading="eager"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:scale-110 [will-change:opacity,transform]"
                   />
                   {/* Imagen Secundaria (Hover) */}
                   <img 
                     src={doc.imageHover} 
                     alt={`${doc.name} secundario`}
-                    className="absolute inset-0 w-full h-full object-cover object-top opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-in-out"
+                    loading="eager"
+                    className="absolute inset-0 w-full h-full object-cover object-top opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-in-out [will-change:opacity,transform]"
                   />
+
+
                 </div>
               </div>
 

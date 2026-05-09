@@ -66,8 +66,9 @@ export default function Specialties() {
                 // pero dejarla fija en la última que tocó suele ser mejor UX.
                 className="group relative h-[380px] rounded-[2rem] overflow-hidden bg-white border border-slate-100 transition-all duration-500 hover:shadow-2xl"
               >
+
                 {/* Imagen de fondo condicionada por isActive */}
-                <div 
+                {/*<div 
                   className={`absolute inset-0 z-0 transition-opacity duration-700 ease-in-out ${
                     isActive ? 'opacity-100' : 'opacity-0'
                   }`}
@@ -78,7 +79,21 @@ export default function Specialties() {
                   }}
                 >
                   <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[2px]" />
+                </div>*/}
+
+
+                {/* Imagen de fondo optimizada */}
+                {/* Imagen de fondo optimizada con z-0 */}
+                <div className={`absolute inset-0 z-0 transition-opacity duration-700 ease-in-out ${isActive ? 'opacity-100' : 'opacity-0'}`}>
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    loading="eager"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[2px]" />
                 </div>
+
           
                 {/* Contenido de la Card condicionado por isActive */}
                 <div className="relative z-10 h-full p-10 flex flex-col justify-end text-left">
