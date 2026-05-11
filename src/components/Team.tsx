@@ -211,12 +211,15 @@ export default function Team() {
                 </p>
 
                 <a 
-                  href="#contacto"
+                  href={`https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20el%20${encodeURIComponent(selectedDoctor.name)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setSelectedDoctor(null)}
                   className="block w-full py-4 bg-[#003e7c] text-white text-center font-bold rounded-2xl hover:bg-[#002d5a] transition-colors shadow-lg"
                 >
                   Contactar Especialista
                 </a>
+
               </div>
             </motion.div>
           </div>

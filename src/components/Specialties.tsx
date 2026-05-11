@@ -107,8 +107,11 @@ export default function Specialties() {
                   }`}>
                     {item.description}
                   </p>
+
                   <a 
-                    href="#" 
+                    href="https://wa.me/5213340974859?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20un%20especialista%20ortop%C3%A9dico."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`inline-flex items-center gap-2 text-sm font-bold transition-all duration-500 ${
                       isActive ? 'text-white' : 'text-slate-900'
                     }`}
@@ -116,6 +119,7 @@ export default function Specialties() {
                     Más Información
                     <ArrowRight className={`w-4 h-4 transition-transform ${isActive ? 'translate-x-1' : ''}`} />
                   </a>
+
                 </div>
               </motion.div>
             );
