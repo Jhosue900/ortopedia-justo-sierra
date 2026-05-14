@@ -98,26 +98,36 @@ export default function Testimonial() {
           </div>
 
           {/* Cards de Reseñas */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {googleReviews.map((review, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative group hover:shadow-md transition-shadow">
-                <Quote className="absolute top-6 right-8 w-8 h-8 text-blue-50 group-hover:text-blue-100 transition-colors" />
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                    {review.name[0]}
+          {/* Cards de Reseñas con Carrusel Automático */}
+          <div className="lg:col-span-3 overflow-hidden relative">
+            {/* Gradientes laterales para suavizar la entrada/salida */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            
+            <div className="animate-marquee flex gap-6 py-4">
+              {/* Duplicamos el map para que el scroll sea infinito y sin saltos */}
+              {[...googleReviews, ...googleReviews].map((review, i) => (
+                <div key={i} className="w-[300px] md:w-[380px] flex-shrink-0 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative group hover:shadow-md transition-shadow">
+                  <Quote className="absolute top-6 right-8 w-8 h-8 text-blue-50 group-hover:text-blue-100 transition-colors" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                      {review.name[0]}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-slate-900 leading-tight">{review.name}</h4>
+                      <p className="text-[10px] text-slate-400 uppercase tracking-wider">{review.date}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-900 leading-tight">{review.name}</h4>
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">{review.date}</p>
+                  <div className="flex mb-3">
+                    {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
                   </div>
+                  <p className="text-sm text-slate-600 leading-relaxed italic">"{review.text}"</p>
                 </div>
-                <div className="flex mb-3">
-                  {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
-                </div>
-                <p className="text-sm text-slate-600 leading-relaxed italic">"{review.text}"</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          
         </div>
 
         {/* Grid de Videos */}
