@@ -36,12 +36,31 @@ const googleReviews = [
 ];
 
 
+
+
 const videoTestimonials = [
-  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898593/testimonio1_g0xktc.mp4" },
-  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898584/testimonio2_uc9c8e.mp4" },
-  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898583/testimonio3_llb7oz.mp4" },
-  { src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1776898586/testimonio4_nzrbvq.mp4" },
+  { 
+    src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778729/TESTIMONIO_1_u429v9.mp4",
+    poster: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778729/TESTIMONIO_1_u429v9.jpg"
+  },
+  { 
+    src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778666/TESTIMONIO_2_fbsiow.mp4",
+    poster: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778666/TESTIMONIO_2_fbsiow.jpg"
+  },
+  { 
+    src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778623/testimonio3_wsiyck.mp4",
+    poster: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778623/testimonio3_wsiyck.jpg"
+  },
+  { 
+    src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778672/testimonio4_kd9xuw.mp4",
+    poster: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778672/testimonio4_kd9xuw.jpg"
+  },
 ];
+
+
+
+
+
 
 export default function Testimonial() {
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
@@ -102,26 +121,45 @@ export default function Testimonial() {
         </div>
 
         {/* Grid de Videos */}
-        {/*<div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12">
-          {videoTestimonials.map((video, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -10 }}
-              className="relative aspect-[9/16] rounded-3xl overflow-hidden bg-black shadow-lg group"
-            >
-              <video
-                src={video.src}
-                className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-                playsInline
-              />
-              
-              <div className="absolute inset-0 border-[8px] border-white/10 rounded-3xl pointer-events-none" />
-            </motion.div>
-          ))}
-        </div>*/}
+        {/* Sección de Video Testimonios Horizontal */}
+        <div className="mt-8">
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+              <Play className="w-6 h-6 text-blue-600 fill-blue-600" />
+              Historias de Éxito
+            </h3>
+            <span className="text-sm text-slate-400 hidden sm:block">Desliza para ver más →</span>
+          </div>
 
+          <div className="flex gap-2 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+            {videoTestimonials.map((video, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="min-w-[280px] md:min-w-[320px] aspect-[9/16] snap-center relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 rounded-[2.5rem] pointer-events-none" />
+                
+                <video
+                  src={video.src}
+                  poster={video.poster}
+                  className="w-full h-full object-cover rounded-[2.5rem] shadow-2xl border-4 border-white ring-1 ring-slate-200"
+                  controls
+                  playsInline
+                  preload="none"
+                />
+                
+                {/* Overlay decorativo para resaltar que es premium */}
+                <div className="absolute top-6 right-6 z-20 bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/30">
+                   <Star className="w-4 h-4 text-white fill-white" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
       </div>
     </section>
