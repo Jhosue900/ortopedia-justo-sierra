@@ -55,6 +55,11 @@ const videoTestimonials = [
     src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778672/testimonio4_kd9xuw.mp4",
     poster: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778778672/testimonio4_kd9xuw.jpg"
   },
+
+  {
+    src: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778896959/testimonio5_cve4qk.mp4",
+    poster: "https://res.cloudinary.com/dodxaehv3/video/upload/v1778896959/testimonio5_cve4qk.jpg"
+  },
 ];
 
 
