@@ -35,10 +35,10 @@ export default function Footer() {
             
             <div className="space-y-4">
               <a 
-                href="tel:+523335596152" 
+                href="tel:+5213340974859" 
                 className="block text-xl font-semibold hover:text-blue-300 transition-colors"
               >
-                (+52) 33 3559 6152
+                (+52) 1 33 4097 4859
               </a>
               <p className="text-blue-100/70 max-w-xs">
                 Calle Justo Sierra 2420, Ladrón De Guevara, <br />
